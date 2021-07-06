@@ -1,3 +1,10 @@
+### Team Members:
+- Aseel Alzweri
+- Hamzh Suilik
+- Hisham Khalil
+- Reema Eilouti
+- Yahya Omari
+
 # eduHub
 eduHub is a professional networking platform for educators mainly, whether they are school teachers, professors, trainers, mentors, coaches or private tutors.
 
