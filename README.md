@@ -14,8 +14,7 @@ Additionally, it helps students, individuals, startups, companies approach local
 
 ### Minimum Viable Product
 
-The MVP will have a Web and Mobile application version.
-Basic features will include the following:
+eduHub will have a Web and Mobile application version. Basic features will include the following:
 - Users database 
 - Profile for each user
 - Post Feature
