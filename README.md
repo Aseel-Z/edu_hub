@@ -7,10 +7,10 @@
 
 # eduHub
 
-eduHub is a professional networking platform for educators mainly, whether they are school teachers, professors, trainers, mentors, coaches or private tutors.
+eduHub is a professional networking platform for local educators mainly, namely school teachers, professors, trainers, mentors, coaches and private tutors.
 
-The platform helps local jordanian educators apply for jobs, connect with other educators in the field, and allows employers to post job openings/announcements.
-Additionally, It helps students/individuals/startups/companies approach local freelance educators.
+The platform helps local jordanian educators apply for jobs, connect with other educators in the field, and allows employers to post job openings and announcements.
+Additionally, it helps students, individuals, startups, companies approach local freelance educators.
 
 ### Minimum Viable Product
 
