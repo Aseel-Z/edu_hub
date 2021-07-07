@@ -12,7 +12,7 @@ eduHub is a professional networking platform for local educators mainly, namely 
 The platform helps local jordanian educators apply for jobs, connect with other educators in the field, and allows employers to post job openings and announcements.
 Additionally, it helps students, individuals, startups, companies approach local freelance educators.
 
-### Minimum Viable Product
+# Minimum Viable Product
 
 eduHub will have a Web and Mobile application version. Basic features will include the following:
 - Users database 
