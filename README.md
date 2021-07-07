@@ -24,32 +24,32 @@ eduHub will have a Web and Mobile application version. Basic features will inclu
 
 
 ### 1- Educator  registration:
-As an educator, i want a registration form, so that i can insert my information
-	Feature Tasks:
-Educator can fill a form with his information and save it in a database 
-Acceptance Tests:
-	Ensure all the information is saved and appeared correctly
+#### As an educator, i want a registration form, so that i can insert my information
+- Feature Tasks:
+	- Educator can fill a form with his information and save it in a database 
+- Acceptance Tests:
+	- Ensure all the information is saved and appeared correctly
 
 ### 2- Student  registration:
-As a student, i want a registration form, so that i can insert my information
-	Feature Tasks:
-Student can fill a form with his information and save it in a database 
-Acceptance Tests:
-	Ensure all the information is saved and appeared correctly
+#### As a student, i want a registration form, so that i can insert my information
+- Feature Tasks:
+	- Student can fill a form with his information and save it in a database 
+- Acceptance Tests:
+	- Ensure all the information is saved and appeared correctly
 
 ### 3- Search for a teacher:
-As a student, i want a search property with a filter, so that i can find a proper educator 
-Feature Tasks:
-Student can search for an educator using a category filter, price filter… etc
-Acceptance Tests:
-Ensure the educators information which are selected  by the search match the filter information
+#### As a student, i want a search property with a filter, so that i can find a proper educator 
+- Feature Tasks:
+	- Student can search for an educator using a category filter, price filter… etc
+- Acceptance Tests:
+	- Ensure the educators information which are selected  by the search match the filter information
 
 ### 4-  connect to a teacher
-As a student, i want to reserve an appointment with the educator, so that the educator can give me a private lesson
-	Feature Tasks:
-		Student can make an appointment with the educator 
-	Acceptance Tests:
-		Ensure the appointment information saved and appeared correctly 
+#### As a student, i want to reserve an appointment with the educator, so that the educator can give me a private lesson
+- Feature Tasks:
+	- Student can make an appointment with the educator 
+- Acceptance Tests:
+	- Ensure the appointment information saved and appeared correctly 
 
 
 # Database Schema Diagram
