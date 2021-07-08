@@ -31,6 +31,6 @@
 - When a user logs in, the product shows the user page directly
 ## Non-Functional Requirements
 - Security: 
-  - the data should be safe and accessible for updating,deleting or adding only  by the data owner.  
+  - all processes such as create,update or delete that can be applied for a user's data  in a database should be authenticated by a username and password related to the data owner only to protect data from tampering.  
 - Usability: 
-  - the design of the product, should be simple, understandable and user friendly; the user shall not have a hard time in dealing with it. The educator can be shown for students properly and the student can reach and connect with proper educators easily 
+  - the pages design should be responsive for mobile and computers screens and attractive for users, the product should be easy to use and the data flow is smooth, in forms, the fields should be restricted in a specific input type and the form should be only submitted when all fields are filled  
