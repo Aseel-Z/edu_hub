@@ -56,7 +56,8 @@ eduHub will have a Web and Mobile application version. Basic features will inclu
 ![DataBase_Schema](https://user-images.githubusercontent.com/77917134/124824715-6990c980-df7b-11eb-8dcb-269e3da74b1a.PNG)
 
 # Domain Modeling
-![Domain Modeling](https://user-images.githubusercontent.com/77917134/124878666-0469c200-dfd5-11eb-8796-ffbe2583c34a.PNG)
+![UML Diagram (1)](https://user-images.githubusercontent.com/77917134/124882220-d4bcb900-dfd8-11eb-8861-d048d0ab8bf8.jpg)
 
 The user can register as an educator, a student or an organization. Each user will be able to send direct messages, post announcements and connect with other users.
-One user can send many messages, post many announcements and have many connections.  
+One user can send many messages, post many announcements and have many connections. 
+
