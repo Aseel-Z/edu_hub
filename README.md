@@ -22,35 +22,47 @@ eduHub will have a Web and Mobile application version. Basic features will inclu
 
 # User Stories
 
-
-### 1- Educator  registration:
+### 1- Educator  Registration:
 #### As an educator, i want a registration form, so that i can insert my information
 - Feature Tasks:
 	- Educator can fill a form with his information and save it in a database 
 - Acceptance Tests:
 	- Ensure all the information is saved and appeared correctly
 
-### 2- Student  registration:
+### 2- Student  Registration:
 #### As a student, i want a registration form, so that i can insert my information
 - Feature Tasks:
 	- Student can fill a form with his information and save it in a database 
 - Acceptance Tests:
 	- Ensure all the information is saved and appeared correctly
-
-### 3- Search for a teacher:
+	 
+### 3- Organization  Registration:
+#### As a student, i want a registration form, so that i can insert my information
+- Feature Tasks:
+	- Student can fill a form with his information and save it in a database 
+- Acceptance Tests:
+	- Ensure all the information is saved and appeared correctly
+	- 
+### 4- Search for a teacher:
 #### As a student, i want a search property with a filter, so that i can find a proper educator 
 - Feature Tasks:
 	- Student can search for an educator using a category filter, price filter… etc
 - Acceptance Tests:
 	- Ensure the educators information which are selected  by the search match the filter information
 
-### 4-  connect to a teacher
+### 5-  connect to a teacher
 #### As a student, i want to reserve an appointment with the educator, so that the educator can give me a private lesson
 - Feature Tasks:
 	- Student can make an appointment with the educator 
 - Acceptance Tests:
 	- Ensure the appointment information saved and appeared correctly 
 
+### 6-  Direct Messaging
+#### As a user, I want to be able to send direct messages to other users
+- Feature Tasks:
+	-  Each user (student, educator, organization) can send a direct message to other users(student, educator, organization)
+- Acceptance Tests:
+	- Ensure the message is sent to the right recipeint and added to the database
 
 # Database Schema Diagram
 ![DataBase_Schema](https://user-images.githubusercontent.com/77917134/124824715-6990c980-df7b-11eb-8dcb-269e3da74b1a.PNG)
