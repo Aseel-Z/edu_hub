@@ -75,4 +75,20 @@ One user can send many messages, post many announcements and have many connectio
 
 
 # Wireframe 
-![edu_hub_Wireframe](https://i.ibb.co/SmYN0mm/Wireframe-edu-hub.png)
+
+## Home Page 
+![home page](https://user-images.githubusercontent.com/77917134/124910402-39394180-dff4-11eb-8fe5-de21a380afae.PNG)
+
+## Home Page - User Signed In
+![home page - signed in](https://user-images.githubusercontent.com/77917134/124910420-40604f80-dff4-11eb-8a74-c83d7042968d.PNG)
+
+## Sign Up Page
+![signup](https://user-images.githubusercontent.com/77917134/124911408-63d7ca00-dff5-11eb-8b1e-73f252d180ec.PNG)
+
+## User Profile
+![profile](https://user-images.githubusercontent.com/77917134/124911383-5b7f8f00-dff5-11eb-9349-43ea2cad8743.PNG)
+
+## About Us Page
+![about us page](https://user-images.githubusercontent.com/77917134/124910469-4b1ae480-dff4-11eb-9d44-7d1977538e5f.PNG)
+
+
