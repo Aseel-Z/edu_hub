@@ -31,6 +31,8 @@
 - When a user logs in, the product shows the user page directly
 ## Non-Functional Requirements
 - Security: 
-  - all processes such as create,update or delete that can be applied for a user's data  in a database should be authenticated by a username and password related to the data owner only to protect data from tampering.  
+  - All inputs should be validated and sanitized on the server-side to prevent malicious input
+  - All processes such as create,update or delete that can be applied for a user's data  in a database should be authenticated by a username and password related to the data owner only to protect data from tampering.  
 - Usability: 
-  - the pages design should be responsive for mobile and computers screens and attractive for users, the product should be easy to use and the data flow is smooth, in forms, the fields should be restricted in a specific input type and the form should be only submitted when all fields are filled  
+  - All input should be validated on the client side, an appropriate error should be shown if the input is not valid, the UI should prevent the user from submitting the form until valid input is given
+  - The pages design should be responsive for mobile and computers screens and attractive for users, the product should be easy to use and the data flow is smooth
