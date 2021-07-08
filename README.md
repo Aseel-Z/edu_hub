@@ -70,9 +70,9 @@ eduHub will have a Web and Mobile application version. Basic features will inclu
 # Domain Modeling
 ![UML Diagram (1)](https://user-images.githubusercontent.com/77917134/124882220-d4bcb900-dfd8-11eb-8861-d048d0ab8bf8.jpg)
 
-# Wireframe 
-![edu_hub_Wireframe](https://i.ibb.co/SmYN0mm/Wireframe-edu-hub.png)
-
 The user can register as an educator, a student or an organization. Each user will be able to send direct messages, post announcements and connect with other users.
 One user can send many messages, post many announcements and have many connections. 
 
+
+# Wireframe 
+![edu_hub_Wireframe](https://i.ibb.co/SmYN0mm/Wireframe-edu-hub.png)
