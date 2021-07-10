@@ -37,7 +37,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'edu_hub'
+    # Third party
+    
+
+    # Local
+    'edu_hub',
 ]
 
 MIDDLEWARE = [
