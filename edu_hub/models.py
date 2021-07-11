@@ -57,8 +57,9 @@ class Connection(models.Model):
     connection_date = models.DateTimeField()
 
 class Chat(models.Model):
-    recipient_id = models.ForeignKey(
-        Member, on_delete=models.CASCADE, null=True, blank=True)
+    member_1 = models.ForeignKey(Member, on_delete=models.CASCADE, related_name = "member_1", null=True, blank=True)
+
+    member_2 = models.ForeignKey(Member, on_delete=models.CASCADE, related_name = "member_2", null=True, blank=True)
 
 class Message(models.Model):
     create_date = models.DateTimeField()
