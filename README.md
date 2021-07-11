@@ -22,47 +22,74 @@ eduHub will have a Web and Mobile application version. Basic features will inclu
 
 # User Stories
 
-### 1- Educator  Registration:
-#### As an educator, i want a registration form, so that i can insert my information
-- Feature Tasks:
-	- Educator can fill a form with his information and save it in a database 
-- Acceptance Tests:
-	- Ensure all the information is saved and appeared correctly
 
-### 2- Student  Registration:
-#### As a student, i want a registration form, so that i can insert my information
-- Feature Tasks:
-	- Student can fill a form with his information and save it in a database 
-- Acceptance Tests:
-	- Ensure all the information is saved and appeared correctly
-	 
-### 3- Organization  Registration:
-#### As a student, i want a registration form, so that i can insert my information
-- Feature Tasks:
-	- Student can fill a form with his information and save it in a database 
-- Acceptance Tests:
-	- Ensure all the information is saved and appeared correctly
-	- 
-### 4- Search for a teacher:
-#### As a student, i want a search property with a filter, so that i can find a proper educator 
-- Feature Tasks:
-	- Student can search for an educator using a category filter, price filter… etc
-- Acceptance Tests:
-	- Ensure the educators information which are selected  by the search match the filter information
+### [1] Member Registration
+#### As a member, I want to receive a confirmation message when I submit the registration form.
 
-### 5-  connect to a teacher
-#### As a student, i want to reserve an appointment with the educator, so that the educator can give me a private lesson
-- Feature Tasks:
-	- Student can make an appointment with the educator 
-- Acceptance Tests:
-	- Ensure the appointment information saved and appeared correctly 
+Feature Tasks:
+An alert message which confirms user registration, should appear on screen
 
-### 6-  Direct Messaging
+Acceptance Tests:
+Ensure user gets an alert upon registration
+
+
+### [2] Organization Form
+#### As an organization, I want to have customized form to complete the sign up process
+
+Feature Task(s):
+- Only fields relatable to organizations shall be rendered
+
+Acceptance Test(s):
+- Verify correct field are rendered
+ 
+ 
+### [3] Student Form
+#### As an student, I want to have customized form to complete the sign up process
+
+Feature Task(s):
+- Only fields relatable to students shall be rendered
+
+Acceptance Test(s):
+- Verify correct field are rendered
+
+
+### [4] Educator Form
+#### As an educator, I want to have customized form to complete the sign up process
+
+Feature Task(s):
+- Only fields relatable to educators shall be rendered
+
+Acceptance Test(s):
+- Verify correct field are rendered
+
+### [5] Search for a member
+#### As a member, I want to be able to search for other registered members, according to a specific criterion
+
+### [6] Connect with a member
+#### As a member, I want to be able to connect with other members.
+
+Feature Task(s):
+- A member should be able to send a connection request to other member.
+- A member should be notified when he/she receives a connection request   
+-  A member should be able to receive a connection request
+- A member should be able to accept or decline a connection request
+- A member should be able to view latest connections list
+
+Acceptance Test(s):
+- Ensure connections data are updated once a connection request is confirmed or declined
+- Ensure that a member gets notified when receiving a connection request
+- Ensure that a member can view latest updated connections list
+- Ensure that a member can send a connection request to another member
+
+
+### [7] Direct Messaging
 #### As a user, I want to be able to send direct messages to other users
-- Feature Tasks:
-	-  Each user (student, educator, organization) can send a direct message to other users(student, educator, organization)
-- Acceptance Tests:
-	- Ensure the message is sent to the right recipeint and added to the database
+
+Feature Task(s):
+Each user (student, educator, organization) can send a direct message to other users(student, educator, organization)
+
+Acceptance Test(s):
+Ensure the message is sent to the right recipeint and added to the database
 
 # Database Schema Diagram
 ![DataBase_Schema](https://user-images.githubusercontent.com/77917134/124824715-6990c980-df7b-11eb-8dcb-269e3da74b1a.PNG)
