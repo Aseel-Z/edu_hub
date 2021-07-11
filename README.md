@@ -1,4 +1,5 @@
 ### Team Members:
+
 - Aseel Alzweri
 - Hamzh Suilik
 - Hisham Khalil
@@ -15,10 +16,11 @@ Additionally, it helps students, individuals, startups, companies approach local
 # Minimum Viable Product
 
 eduHub will have a Web and Mobile application version. Basic features will include the following:
-- Users database 
-- Profile for each user
-- Post Feature
-- Direct Messaging Feature
+
+- Users database.
+- Profile for each user.
+- Post Feature.
+- Direct Messaging Feature.
 
 # User Stories
 
@@ -92,14 +94,14 @@ Acceptance Test(s):
 Ensure the message is sent to the right recipeint and added to the database
 
 # Database Schema Diagram
-![DataBase_Schema](https://user-images.githubusercontent.com/77917134/124824715-6990c980-df7b-11eb-8dcb-269e3da74b1a.PNG)
+![DataBase_Schema](https://i.ibb.co/k1zyxQB/UML-Diagram.jpg)
 
 # Domain Modeling
-![UML Diagram (1)](https://user-images.githubusercontent.com/77917134/124882220-d4bcb900-dfd8-11eb-8861-d048d0ab8bf8.jpg)
+![UML Diagram (1)](https://i.ibb.co/jzvWwq2/UML-Diagram-1.jpg)
 
-The user can register as an educator, a student or an organization. Each user will be able to send direct messages, post announcements and connect with other users.
-One user can send many messages, post many announcements and have many connections. 
+- The user can register as an educator, a student or an organization. Each user will be able to send direct messages, post announcements and connect with other users.
 
+- One user can send many messages, post many announcements and have many connections.
 
 # Wireframe 
 
