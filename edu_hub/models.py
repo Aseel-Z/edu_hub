@@ -56,19 +56,18 @@ class Connection(models.Model):
         Member, on_delete=models.CASCADE, related_name='member_id', null=True, blank=True)
     connection_date = models.DateTimeField()
 
+class Chat(models.Model):
+    recipient_id = models.ForeignKey(
+        Member, on_delete=models.CASCADE, null=True, blank=True)
 
 class Message(models.Model):
     create_date = models.DateTimeField()
     message_body = models.TextField()
     creator_id = models.ForeignKey(
         Member, on_delete=models.CASCADE, null=True, blank=True)
+    chat_id = models.ForeignKey(
+        Chat, on_delete=models.CASCADE, null=True, blank=True)
 
-
-class Chat(models.Model):
-    recipient_id = models.ForeignKey(
-        Member, on_delete=models.CASCADE, null=True, blank=True)
-    message_id = models.ForeignKey(
-        Message, on_delete=models.CASCADE, null=True, blank=True)
 
 
 class Post(models.Model):
