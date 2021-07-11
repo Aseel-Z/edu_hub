@@ -73,7 +73,7 @@ Acceptance Test(s):
 Feature Task(s):
 - A member should be able to send a connection request to other member.
 - A member should be notified when he/she receives a connection request   
--  A member should be able to receive a connection request
+- A member should be able to receive a connection request
 - A member should be able to accept or decline a connection request
 - A member should be able to view latest connections list
 
