@@ -1,7 +1,13 @@
+from django.views.generic import TemplateView
 from rest_framework import generics
 from edu_hub.models import Member, Message, Post, Connection
 from .serializers import MemberSerializer, MessageSerializer, PostSerializer, ConnectionSerializer
 
+class HomePageView(TemplateView):
+    template_name = 'pages/home.html'
+
+class AboutPageView(TemplateView):
+    template_name = 'pages/about.html'
 
 class MemberList(generics.ListCreateAPIView):
     queryset = Member.objects.all()

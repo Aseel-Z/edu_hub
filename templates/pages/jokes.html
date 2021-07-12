@@ -1,0 +1,73 @@
+{% extends '_base.html' %}
+
+{% block title %}Jokes!{% endblock %}
+
+{% block content %}
+<h1>Jokes!</h1>
+
+<ul>
+    <li>
+        <p>Q: How many programmers does it take to change a light bulb?</p>
+        <p>A: none, that's a hardware problem</p>
+    </li>
+
+    <li>
+        <p>Q: "Whats the object-oriented way to become wealthy?"</p>
+        <p>A: Inheritance</p>
+    </li>
+
+    <li>
+        <p>Q: Why did the programmer quit his job?</p>
+        <p>A: Because he didn't get arrays.</p>
+    </li>
+
+    <li>
+        <p>Q: What did the Java code say to the C code?</p>
+        <p>A: You've got no class.</p>
+    </li>
+
+    <li>
+        <p>Q: Why are Assembly programmers always soaking wet?</p>
+        <p>A: They work below C-level.</p>
+    </li>
+
+    <li>
+        <p>Q: What do cats and programmers have in common?</p>
+        <p>A: When either one is unusually happy and excited, an appropriate question would be, "did you find a bug?"
+        </p>
+    </li>
+
+    <li>
+        <p>Q: What is the most used language in programming?</p>
+        <p>A: Profanity.</p>
+    </li>
+
+    <li>
+        <p>Q: Why do programmers always get Christmas and Halloween mixed up?</p>
+        <p>A: Because DEC 25 = OCT 31</p>
+    </li>
+
+    <li>
+        <p>Q: How did the programmer die in the shower?</p>
+        <p>A: He read the shampoo bottle instructions: Lather. Rinse. Repeat.</p>
+    </li>
+
+    {% for joke in object_list %}
+
+    <li>
+
+        <p>{{ joke.joke_text }}</p>
+
+    </li>
+    
+    {% endfor %}
+
+</ul>
+
+
+
+
+<button><a href="{% url 'create_joke' %}">Add a joke</a></button>
+
+
+{% endblock content %}

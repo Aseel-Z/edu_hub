@@ -1,0 +1,16 @@
+{% extends '_base.html' %}
+
+{% block title %}About page{% endblock %}
+
+{% block content %}
+<h1>About page</h1>
+
+<h2>Hello there!</h2>
+
+<h3>This is my Django project using DjangoX</h3>
+
+<h4>You can create an account, and view some cool (hopefully funny) programming jokes!</h4>
+
+<button><a href="{% url 'jokes' %}">Jokes here :D</a></button>
+
+{% endblock content %}
