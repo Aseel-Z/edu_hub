@@ -12,6 +12,7 @@ class Connection(models.Model):
     connection_date = models.DateTimeField()
 
 class Message(models.Model):
+    
     creator_id = models.ForeignKey(AUTH_USER_MODEL, on_delete=models.CASCADE,related_name= "creator_id", null=True, blank=True)
 
     recipient_id = models.ForeignKey(AUTH_USER_MODEL, on_delete=models.CASCADE,related_name= "recipient_id", null=True, blank=True)
