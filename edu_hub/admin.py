@@ -1,8 +1,8 @@
 from django.db import models
-from edu_hub.models import Connection, Member, Message, Chat, Post
+from edu_hub.models import Connection, Member, Message, Post
 from django.contrib import admin
 
-models = (Member, Message, Chat, Post, Connection)
+models = (Member, Message, Post, Connection)
 
 for model in models:
 
