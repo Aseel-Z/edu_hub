@@ -5,7 +5,7 @@ from django.urls import reverse
 from rest_framework import status
 from rest_framework.test import APITestCase
 
-from .models import Member, Message, Chat, Connection, Post
+from .models import Member, Message, Connection, Post
 # Create your tests here.
 
 class MemberModelTests(TestCase):

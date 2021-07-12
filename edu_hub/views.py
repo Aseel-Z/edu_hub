@@ -1,6 +1,6 @@
 from rest_framework import generics
-from edu_hub.models import Member, Message, Chat, Post, Connection
-from .serializers import MemberSerializer, MessageSerializer, ChatSerializer, PostSerializer, ConnectionSerializer
+from edu_hub.models import Member, Message, Post, Connection
+from .serializers import MemberSerializer, MessageSerializer, PostSerializer, ConnectionSerializer
 
 
 class MemberList(generics.ListCreateAPIView):
@@ -21,17 +21,7 @@ class ConnectionDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Connection.objects.all()
     serializer_class = ConnectionSerializer
 
-
-
-class ChatList(generics.ListCreateAPIView):
-    queryset = Chat.objects.all()
-    serializer_class = ChatSerializer
-
-class ChatDetail(generics.RetrieveUpdateDestroyAPIView):
-    queryset = Chat.objects.all()
-    serializer_class = ChatSerializer
-
-
+    
 
 class MessageList(generics.ListCreateAPIView):
     queryset = Message.objects.all()

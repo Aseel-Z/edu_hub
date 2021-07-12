@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Member, Message, Chat, Post, Connection
+from .models import Member, Message, Post, Connection
 
 class MemberSerializer(serializers.ModelSerializer):
     class Meta:
@@ -10,11 +10,6 @@ class MessageSerializer(serializers.ModelSerializer):
     class Meta:
         model = Message
         fields = ('id','create_date','message_body','creator_id')
-
-class ChatSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Chat
-        fields = ('id','recipient_id','message_id')
 
 class PostSerializer(serializers.ModelSerializer):
     class Meta:

@@ -1,4 +1,4 @@
-from django.db import connection, models
+from django.db import models
 from django.contrib.auth import get_user_model
 
 
@@ -56,20 +56,12 @@ class Connection(models.Model):
         Member, on_delete=models.CASCADE, related_name='member_id', null=True, blank=True)
     connection_date = models.DateTimeField()
 
-class Chat(models.Model):
-    member_1 = models.ForeignKey(Member, on_delete=models.CASCADE, related_name = "member_1", null=True, blank=True)
-
-    member_2 = models.ForeignKey(Member, on_delete=models.CASCADE, related_name = "member_2", null=True, blank=True)
-
 class Message(models.Model):
     create_date = models.DateTimeField()
     message_body = models.TextField()
-    creator_id = models.ForeignKey(
-        Member, on_delete=models.CASCADE, null=True, blank=True)
-    chat_id = models.ForeignKey(
-        Chat, on_delete=models.CASCADE, null=True, blank=True)
+    creator_id = models.ForeignKey(Member, on_delete=models.CASCADE,related_name= "creator_id", null=True, blank=True)
 
-
+    recipient_id = models.ForeignKey(Member, on_delete=models.CASCADE,related_name= "recipient_id", null=True, blank=True)
 
 class Post(models.Model):
     create_date = models.DateTimeField()
