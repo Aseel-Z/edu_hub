@@ -46,7 +46,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     birth_date = models.DateTimeField(blank=True, null=True)
 
  
-    # profile_image = models.ImageField(null=True)
+    profile_image = models.ImageField(null=True)
     cities_options = [('AMMAN', 'Amman'), ('ZARQA', 'Zarqa'), ('IRBID', 'Irbid'), ('MAFRAQ', 'Mafraq'), ('SALT', 'Salt'), ('MADABA', 'Madaba'),('AQABA', 'Aqaba'), ('MA`AN', 'Ma`an'), ('JARASH', 'Jarash'), ('AJLUN', 'Ajlun'), ('KARAK', 'Karak'), ('TAFILAH', 'Tafilah')]
     local = models.BooleanField(default="False")
     city = models.CharField(max_length=255, choices=cities_options, blank=True, null=True)
@@ -69,26 +69,3 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     USERNAME_FIELD = 'username'
     REQUIRED_FIELDS = ['email', ]
-
-
-
-class Connection(models.Model):
-    # connection_member_id = models.ManyToManyField(Member, on_delete=models.CASCADE , null = True, blank = True)
-    connection_member_id = models.ForeignKey(
-        User, on_delete=models.CASCADE, related_name='connection_member_id', null=True, blank=True)
-    member_id = models.ForeignKey(
-        User, on_delete=models.CASCADE, related_name='member_id', null=True, blank=True)
-    connection_date = models.DateTimeField()
-
-class Message(models.Model):
-    create_date = models.DateTimeField()
-    message_body = models.TextField()
-    creator_id = models.ForeignKey(User, on_delete=models.CASCADE,related_name= "creator_id", null=True, blank=True)
-
-    recipient_id = models.ForeignKey(User, on_delete=models.CASCADE,related_name= "recipient_id", null=True, blank=True)
-
-class Post(models.Model):
-    create_date = models.DateTimeField()
-    post_body = models.TextField()
-    creator_id = models.ForeignKey(
-        User, on_delete=models.CASCADE, null=True, blank=True)

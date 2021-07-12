@@ -44,6 +44,7 @@ INSTALLED_APPS = [
 
     # Local
     'users',
+    'edu_hub',
     # 'accounts'
 ]
 
@@ -129,7 +130,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-# custome user model
+# costume user model
 AUTH_USER_MODEL = 'users.User'
 ACCOUNT_EMAIL_REQUIRED = False
 
