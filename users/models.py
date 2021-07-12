@@ -46,7 +46,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     birth_date = models.DateTimeField(blank=True, null=True)
 
  
-    profile_image = models.ImageField(null=True)
+    # profile_image = models.ImageField(null=True)
     cities_options = [('AMMAN', 'Amman'), ('ZARQA', 'Zarqa'), ('IRBID', 'Irbid'), ('MAFRAQ', 'Mafraq'), ('SALT', 'Salt'), ('MADABA', 'Madaba'),('AQABA', 'Aqaba'), ('MA`AN', 'Ma`an'), ('JARASH', 'Jarash'), ('AJLUN', 'Ajlun'), ('KARAK', 'Karak'), ('TAFILAH', 'Tafilah')]
     local = models.BooleanField(default="False")
     city = models.CharField(max_length=255, choices=cities_options, blank=True, null=True)

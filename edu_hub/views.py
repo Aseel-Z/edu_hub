@@ -1,5 +1,5 @@
 from rest_framework import generics
-from users.models import Message, Post, Connection
+from edu_hub.models import Message, Post, Connection
 from edu_hub.serializers import MessageSerializer, PostSerializer, ConnectionSerializer
 
 
