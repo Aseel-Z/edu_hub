@@ -1,14 +1,14 @@
 from rest_framework import generics
-from edu_hub.models import Member, Message, Post, Connection
+from users.models import User, Message, Post, Connection
 from .serializers import MemberSerializer, MessageSerializer, PostSerializer, ConnectionSerializer
 
 
 class MemberList(generics.ListCreateAPIView):
-    queryset = Member.objects.all()
+    queryset = User.objects.all()
     serializer_class = MemberSerializer
 
 class MemberDetail(generics.RetrieveUpdateDestroyAPIView):
-    queryset = Member.objects.all()
+    queryset = User.objects.all()
     serializer_class = MemberSerializer
 
 
