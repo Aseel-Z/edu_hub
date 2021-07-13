@@ -3,7 +3,7 @@ atomicwrites==1.4.0; python_version >= "3.6" and python_full_version < "3.0.0" a
 attrs==21.2.0; python_version >= "3.6" and python_full_version < "3.0.0" or python_full_version >= "3.5.0" and python_version >= "3.6"
 certifi==2021.5.30; python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.6.0"
 cffi==1.14.6; python_version >= "3.6"
-charset-normalizer==2.0.0; python_full_version >= "3.6.0" and python_version >= "3"
+charset-normalizer==2.0.1; python_full_version >= "3.6.0" and python_version >= "3"
 colorama==0.4.4; python_version >= "3.6" and python_full_version < "3.0.0" and sys_platform == "win32" or sys_platform == "win32" and python_version >= "3.6" and python_full_version >= "3.5.0"
 cryptography==3.4.7; python_version >= "3.7"
 defusedxml==0.7.1; python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.5.0"
@@ -20,7 +20,9 @@ oauthlib==3.1.1; python_version >= "3.6" and python_full_version < "3.0.0" or py
 packaging==21.0; python_version >= "3.6"
 pillow==8.3.1; python_version >= "3.6"
 pluggy==0.13.1; python_version >= "3.6" and python_full_version < "3.0.0" or python_full_version >= "3.4.0" and python_version >= "3.6"
+postgres==3.0.0
 psycopg2-binary==2.9.1; python_version >= "3.6"
+psycopg2-pool==1.1; python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.5.0"
 py==1.10.0; python_version >= "3.6" and python_full_version < "3.0.0" or python_full_version >= "3.4.0" and python_version >= "3.6"
 pycparser==2.20; python_version >= "3.6" and python_full_version < "3.0.0" or python_full_version >= "3.4.0" and python_version >= "3.6"
 pyjwt==2.1.0; python_version >= "3.7"
