@@ -18,9 +18,12 @@ from django.urls import path
 from django.urls.conf import include
 from rest_framework_simplejwt import views as jwt_views
 from django.views.generic import RedirectView
+from django.views.generic import RedirectView
+from django.conf.urls import url
 
 
 urlpatterns = [
+    url(r'^favicon\.ico$',RedirectView.as_view(url='/static/images/favicon.ico')),
     path('admin/', admin.site.urls),
     path('', include('users.urls')),
     path('', include('edu_hub.urls')),
