@@ -55,6 +55,7 @@ ALLOWED_HOSTS = ['127.0.0.1', '0.0.0.0']
 # Application definition
 
 INSTALLED_APPS = [
+    'whitenoise.runserver_nostatic',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -201,3 +202,5 @@ REST_FRAMEWORK = {
 }
 
 
+CORS_ORIGIN_WHITELIST = tuple(env.list("ALLOWED_ORIGINS"))
+CORS_ALLOW_ALL_ORIGINS = env.bool("ALLOW_ALL_ORIGINS")
