@@ -1,3 +1,4 @@
+from django.db.models import fields
 from rest_framework import serializers
 from allauth.account.adapter import get_adapter
 from allauth.account.utils import setup_user_email
@@ -48,8 +49,6 @@ class RegisterSerializer(serializers.Serializer):
         setup_user_email(request, user, [])
         user.save()
         return user
-        
-
 
 
 class UserDetailsSerializer(serializers.ModelSerializer):
@@ -67,3 +66,24 @@ class SignUpForm(UserCreationForm):
         model = User
         fields = '__all__'
 
+class UserSignUp(serializers.ModelSerializer):
+    password = serializers.CharField(write_only=True)
+
+ 
+    class Meta:
+        
+        # fields = "__all__"
+        model = User
+        fields = ("id", "username","password","email",)
+        write_only_fields = ('password',)
+        read_only_fields = ('id',)
+
+    def create(self, validated_data):
+        user = User.objects.create(
+            username=validated_data['username'],
+            email=validated_data['email'],
+        )
+
+        user.set_password(validated_data['password'])
+        user.save()
+        return user
