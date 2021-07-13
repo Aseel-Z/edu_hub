@@ -44,10 +44,14 @@ INSTALLED_APPS = [
 
     # Local
     'users',
-    # 'accounts'
+    'edu_hub',
+    'allauth',
+    'allauth.account',
+    'django.contrib.sites',
+   
 ]
 
-
+SITE_ID = 1
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -64,7 +68,7 @@ ROOT_URLCONF = 'edu_hub_project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR/'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -129,7 +133,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-# custome user model
+# costume user model
 AUTH_USER_MODEL = 'users.User'
 ACCOUNT_EMAIL_REQUIRED = False
 
@@ -140,14 +144,14 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 REST_FRAMEWORK = {
-    "DEFAULT_PERMISSION_CLASSES": [
-        "rest_framework.permissions.IsAuthenticated",
-    ],
+    # "DEFAULT_PERMISSION_CLASSES": [
+    #     "rest_framework.permissions.IsAuthenticated",
+    # ],
     'DEFAULT_AUTHENTICATION_CLASSES': [
-        # 'rest_framework.authentication.BasicAuthentication',
-        # 'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
         'rest_framework.authentication.TokenAuthentication',
-        #'rest_framework_simplejwt.authentication.JWTAuthentication',
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
 
     ],
 }

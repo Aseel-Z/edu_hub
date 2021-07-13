@@ -1,42 +1,54 @@
 from rest_framework import generics
-from users.models import User, Message, Post, Connection
-from .serializers import MemberSerializer, MessageSerializer, PostSerializer, ConnectionSerializer
+from users.models import User
+from users.serializers import UserDetailsSerializer, LoginSerializer, UserSignUp #SignUpForm
+from django.shortcuts import render, redirect
+from django.contrib.auth import login, authenticate
+from django.views.generic.edit import CreateView
+from django.urls import reverse_lazy
+from django.contrib.messages.views import SuccessMessageMixin
 
 
 class MemberList(generics.ListCreateAPIView):
     queryset = User.objects.all()
-    serializer_class = MemberSerializer
+    serializer_class = UserDetailsSerializer
+
 
 class MemberDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = User.objects.all()
-    serializer_class = MemberSerializer
+    serializer_class = UserDetailsSerializer
 
 
+class LoginView(generics.RetrieveAPIView):
+    serializer_class = LoginSerializer
+    queryset = User.objects.all()
 
-class ConnectionList(generics.ListCreateAPIView):
-    queryset = Connection.objects.all()
-    serializer_class = ConnectionSerializer
+    error_messages = {
+        'invalid': "Invalid username or password",
+        'disabled': "Sorry, this account is suspended",
+    }
 
-class ConnectionDetail(generics.RetrieveUpdateDestroyAPIView):
-    queryset = Connection.objects.all()
-    serializer_class = ConnectionSerializer
+    def _error_response(self, message_key):
+        data = {
+            'success': False,
+            'message': self.error_messages[message_key],
+            'user_id': None,
+        }
 
-    
+    def post(self, request):
+        email = request.POST.get('email')
+        password = request.POST.get('password')
+        user = authenticate(email=email, password=password)
+        if user is not None:
+            if user.is_active:
+                login(request, user)
 
-class MessageList(generics.ListCreateAPIView):
-    queryset = Message.objects.all()
-    serializer_class = MessageSerializer
-
-class MessageDetail(generics.RetrieveUpdateDestroyAPIView):
-    queryset = Message.objects.all()
-    serializer_class = MessageSerializer
+                return Response(status=status.HTTP_100_OK)
+            return self._error_response('disabled')
+        return self._error_response('invalid')
 
 
+class SignUpView(generics.CreateAPIView):
+    queryset = User.objects.all()
+    serializer_class = UserSignUp
 
-class PostList(generics.ListCreateAPIView):
-    queryset = Post.objects.all()
-    serializer_class = PostSerializer
-
-class PostDetail(generics.RetrieveUpdateDestroyAPIView):
-    queryset = Post.objects.all()
-    serializer_class = PostSerializer
+# Add Logout 

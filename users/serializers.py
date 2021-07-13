@@ -1,8 +1,15 @@
+from django.db.models import fields
 from rest_framework import serializers
 from allauth.account.adapter import get_adapter
-from edu_hub_project import settings
-from users.models import User, Message, Post, Connection
 from allauth.account.utils import setup_user_email
+from edu_hub_project import settings
+from users.models import User
+from django.contrib.auth.forms import UserCreationForm
+
+class LoginSerializer(serializers.ModelSerializer):
+     class Meta:
+         model=User
+         fields=('email','password') 
 
 
 class RegisterSerializer(serializers.Serializer):
@@ -29,8 +36,6 @@ class RegisterSerializer(serializers.Serializer):
         return {
             'first_name': self.validated_data.get('first_name', ''),
             'last_name': self.validated_data.get('last_name', ''),
-            # 'address': self.validated_data.get('address', ''),
-            # 'user_type': self.validated_data.get('user_type', ''),
             'password1': self.validated_data.get('password1', ''),
             'email': self.validated_data.get('email', ''),
         }
@@ -44,8 +49,6 @@ class RegisterSerializer(serializers.Serializer):
         setup_user_email(request, user, [])
         user.save()
         return user
-        
-
 
 
 class UserDetailsSerializer(serializers.ModelSerializer):
@@ -54,21 +57,33 @@ class UserDetailsSerializer(serializers.ModelSerializer):
     """
     class Meta:
         model = User
-        fields = ('__all__')
+        fields = '__all__'
         read_only_fields = ('email', )
 
 
-class MessageSerializer(serializers.ModelSerializer):
+class SignUpForm(UserCreationForm):
     class Meta:
-        model = Message
-        fields = ('id','create_date','message_body','creator_id')
+        model = User
+        fields = '__all__'
 
-class PostSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Post
-        fields = ('id','create_date','post_body','creator_id')
+class UserSignUp(serializers.ModelSerializer):
+    password = serializers.CharField(write_only=True)
 
-class ConnectionSerializer(serializers.ModelSerializer):
+ 
     class Meta:
-        model = Connection
-        fields = ('id','connection_member_id','member_id','connection_date')
+        
+        # fields = "__all__"
+        model = User
+        fields = ("id", "username","password","email",)
+        write_only_fields = ('password',)
+        read_only_fields = ('id',)
+
+    def create(self, validated_data):
+        user = User.objects.create(
+            username=validated_data['username'],
+            email=validated_data['email'],
+        )
+
+        user.set_password(validated_data['password'])
+        user.save()
+        return user

@@ -5,6 +5,7 @@ from django.utils import timezone
 
 
 
+
 class UserManager(BaseUserManager):
 
     def _create_user(self, username, email, password, is_staff, is_superuser, **extra_fields):
@@ -15,13 +16,13 @@ class UserManager(BaseUserManager):
         user = self.model(username=username, email=email,
                           is_staff=is_staff, is_active=True,
                           is_superuser=is_superuser, last_login=now,
-                          date_joined=now, **extra_fields)
+                           **extra_fields)
         user.set_password(password)
         user.save(using=self._db)
         return user
 
     def create_user(self, username, email=None, password=None, **extra_fields):
-        return self._create_user(username, email, password, False, False, ' ',
+        return self._create_user(username, email, password, True, False, 
                                  **extra_fields)
 
     def create_superuser(self, username, email, password, **extra_fields):
@@ -70,25 +71,3 @@ class User(AbstractBaseUser, PermissionsMixin):
     USERNAME_FIELD = 'username'
     REQUIRED_FIELDS = ['email', ]
 
-
-
-class Connection(models.Model):
-    # connection_member_id = models.ManyToManyField(Member, on_delete=models.CASCADE , null = True, blank = True)
-    connection_member_id = models.ForeignKey(
-        User, on_delete=models.CASCADE, related_name='connection_member_id', null=True, blank=True)
-    member_id = models.ForeignKey(
-        User, on_delete=models.CASCADE, related_name='member_id', null=True, blank=True)
-    connection_date = models.DateTimeField()
-
-class Message(models.Model):
-    create_date = models.DateTimeField()
-    message_body = models.TextField()
-    creator_id = models.ForeignKey(User, on_delete=models.CASCADE,related_name= "creator_id", null=True, blank=True)
-
-    recipient_id = models.ForeignKey(User, on_delete=models.CASCADE,related_name= "recipient_id", null=True, blank=True)
-
-class Post(models.Model):
-    create_date = models.DateTimeField()
-    post_body = models.TextField()
-    creator_id = models.ForeignKey(
-        User, on_delete=models.CASCADE, null=True, blank=True)
