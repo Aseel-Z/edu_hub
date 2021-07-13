@@ -18,17 +18,14 @@ from django.urls import path
 from django.urls.conf import include
 from rest_framework_simplejwt import views as jwt_views
 from django.views.generic import RedirectView
-from django.views.generic import RedirectView
-from django.conf.urls import url
 
 
 urlpatterns = [
-    url(r'^favicon\.ico$',RedirectView.as_view(url='/static/images/favicon.ico')),
     path('admin/', admin.site.urls),
     path('', include('users.urls')),
     path('', include('edu_hub.urls')),
-    # path('edu_hub_project/', include('edu_hub_project.urls')),
-    path('', RedirectView.as_view(url='/admin')),
+    # path('', RedirectView.as_view(url='/admin')),
+    # path('', RedirectView.as_view()),
     path('api-auth/', include("rest_framework.urls")),
     path("api/token/",jwt_views.TokenObtainPairView.as_view(), name="token_obtain_pair",),
     path("api/token/refresh", jwt_views.TokenRefreshView.as_view(), name="token_refresh",),
