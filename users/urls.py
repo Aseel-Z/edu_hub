@@ -1,14 +1,9 @@
 from django.urls import path
+from django.contrib.auth import views as auth_views
 
-from .views import MemberList, MemberDetail #, ConnectionList, ConnectionDetail, MessageList, MessageDetail, PostList, PostDetail
+from .views import MemberList, MemberDetail, SignUpView
 
 urlpatterns = [
-    path("show_members/", MemberList.as_view(), name = 'member_list'),
+    path("login/show_members/", MemberList.as_view(), name = 'member_list'),
     path("show_members/<int:pk>/", MemberDetail.as_view(), name = 'member_detail'),
-    # path("show_connections/", ConnectionList.as_view()),
-    # path("show_connections/<int:pk>/", ConnectionDetail.as_view()),
-    # path("show_message/", MessageList.as_view()),
-    # path("show_message/<int:pk>/", MessageDetail.as_view()),
-    # path("show_post/", PostList.as_view()),
-    # path("show_post/<int:pk>/", PostDetail.as_view()),
 ]

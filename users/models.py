@@ -15,13 +15,13 @@ class UserManager(BaseUserManager):
         user = self.model(username=username, email=email,
                           is_staff=is_staff, is_active=True,
                           is_superuser=is_superuser, last_login=now,
-                          date_joined=now, **extra_fields)
+                           **extra_fields)
         user.set_password(password)
         user.save(using=self._db)
         return user
 
     def create_user(self, username, email=None, password=None, **extra_fields):
-        return self._create_user(username, email, password, False, False, ' ',
+        return self._create_user(username, email, password, True, False, 
                                  **extra_fields)
 
     def create_superuser(self, username, email, password, **extra_fields):

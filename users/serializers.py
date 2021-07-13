@@ -1,8 +1,14 @@
 from rest_framework import serializers
 from allauth.account.adapter import get_adapter
+from allauth.account.utils import setup_user_email
 from edu_hub_project import settings
 from users.models import User
-from allauth.account.utils import setup_user_email
+from django.contrib.auth.forms import UserCreationForm
+
+class LoginSerializer(serializers.ModelSerializer):
+     class Meta:
+         model=User
+         fields=('email','password') 
 
 
 class RegisterSerializer(serializers.Serializer):
@@ -29,8 +35,6 @@ class RegisterSerializer(serializers.Serializer):
         return {
             'first_name': self.validated_data.get('first_name', ''),
             'last_name': self.validated_data.get('last_name', ''),
-            # 'address': self.validated_data.get('address', ''),
-            # 'user_type': self.validated_data.get('user_type', ''),
             'password1': self.validated_data.get('password1', ''),
             'email': self.validated_data.get('email', ''),
         }
@@ -54,5 +58,12 @@ class UserDetailsSerializer(serializers.ModelSerializer):
     """
     class Meta:
         model = User
-        fields = ('__all__')
+        fields = '__all__'
         read_only_fields = ('email', )
+
+
+class SignUpForm(UserCreationForm):
+    class Meta:
+        model = User
+        fields = '__all__'
+
