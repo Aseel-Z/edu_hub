@@ -1,5 +1,4 @@
 """edu_hub_project URL Configuration
-
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.2/topics/http/urls/
 Examples:
@@ -30,5 +29,3 @@ urlpatterns = [
     path("api/token/",jwt_views.TokenObtainPairView.as_view(), name="token_obtain_pair",),
     path("api/token/refresh", jwt_views.TokenRefreshView.as_view(), name="token_refresh",),
 ]
-
-

@@ -74,7 +74,9 @@ class UserSignUp(serializers.ModelSerializer):
         
         # fields = "__all__"
         model = User
-        fields = ("id", "username","password","email","first_name","city","member", "mobile_number","specialization","interests","biography","hourly_tutoring_rate",)
+        # fields = ("id", "username","password","email","first_name","city","member", "mobile_number","specialization","interests","biography","hourly_tutoring_rate",)
+        fields = ("id", "username","password","email",)
+
         write_only_fields = ('password',)
         read_only_fields = ('id',)
 

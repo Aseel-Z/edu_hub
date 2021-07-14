@@ -43,8 +43,8 @@ class User(AbstractBaseUser, PermissionsMixin):
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
     is_superuser = models.BooleanField(default=False)
-    created_at = models.DateTimeField(default=timezone.now)
-    birth_date = models.DateTimeField(blank=True, null=True)
+    # created_at = models.DateTimeField(default=timezone.now)
+    # birth_date = models.DateTimeField(blank=True, null=True)
 
  
     # profile_image = models.ImageField(null=True)
@@ -64,7 +64,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     freelancer = models.BooleanField(default=False)
     hourly_tutoring_rate = models.IntegerField( blank=True, null=True)
     services = models.TextField( blank=True, null=True)
-    updated_at = models.DateTimeField( blank=True, null=True)
+    # updated_at = models.DateTimeField( blank=True, null=True)
 
     objects = UserManager()
 
