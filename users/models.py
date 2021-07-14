@@ -34,7 +34,6 @@ class UserManager(BaseUserManager):
 
 
 class User(AbstractBaseUser, PermissionsMixin):
-    member_type = [('EDUCATOR', 'educator'), ('ORGANIZATION','organization'), ('STUDENT', 'student')]
 
     member_type = [('EDUCATOR', 'educator'), ('ORGANIZATION','organization'), ('STUDENT', 'student')]
     gender_options = [('M', 'Male'), ('F', 'Female')]
