@@ -31,13 +31,13 @@ class UserAccountTests(TestCase):
 
 class PostTests(APITestCase):
     def test_home_page_status_code(self):
-        url = reverse('member_list')
+        url = reverse('show_message')
         response = self.client.get(url)
         self.assertEqual(response.status_code, 200)
 
 
     def test_about_page_status_code(self):
-        url = reverse('member_detail', args = [1, ])
+        url = reverse('show_message_primary', args = [1, ])
         response = self.client.get(url)
         # It gives 401 because the authentication.
         self.assertEqual(response.status_code, 404)
@@ -62,7 +62,6 @@ class MemberModelTests(TestCase):
         is_active = True,
         is_staff = True,
         is_superuser = True,
-        created_at= "2020-07-12",
         local = True,
         city = "Amman",
         member= 'educator',
