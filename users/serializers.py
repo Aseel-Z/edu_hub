@@ -74,7 +74,7 @@ class UserSignUp(serializers.ModelSerializer):
         
         # fields = "__all__"
         model = User
-        fields = ("id", "username","password","email",)
+        fields = ("id", "username","password","email","first_name","city","member", "mobile_number","specialization","interests","biography","hourly_tutoring_rate",)
         write_only_fields = ('password',)
         read_only_fields = ('id',)
 
@@ -82,6 +82,14 @@ class UserSignUp(serializers.ModelSerializer):
         user = User.objects.create(
             username=validated_data['username'],
             email=validated_data['email'],
+            first_name=validated_data['first_name'],
+            city=validated_data['city'],
+            member=validated_data['member'],
+            mobile_number=validated_data['mobile_number'],
+            specialization=validated_data['specialization'],
+            interests=validated_data['interests'],
+            biography=validated_data['biography'],
+            hourly_tutoring_rate=validated_data['hourly_tutoring_rate'],
         )
 
         user.set_password(validated_data['password'])
