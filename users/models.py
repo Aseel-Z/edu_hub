@@ -35,6 +35,8 @@ class UserManager(BaseUserManager):
 
 class User(AbstractBaseUser, PermissionsMixin):
     member_type = [('EDUCATOR', 'educator'), ('ORGANIZATION','organization'), ('STUDENT', 'student')]
+
+    member_type = [('EDUCATOR', 'educator'), ('ORGANIZATION','organization'), ('STUDENT', 'student')]
     gender_options = [('M', 'Male'), ('F', 'Female')]
     username = models.CharField(max_length=30, unique=True)
     email = models.EmailField(max_length=250, unique=True)
@@ -49,6 +51,8 @@ class User(AbstractBaseUser, PermissionsMixin):
  
     # profile_image = models.ImageField(null=True)
     cities_options = [('AMMAN', 'Amman'), ('ZARQA', 'Zarqa'), ('IRBID', 'Irbid'), ('MAFRAQ', 'Mafraq'), ('SALT', 'Salt'), ('MADABA', 'Madaba'),('AQABA', 'Aqaba'), ('MA`AN', 'Ma`an'), ('JARASH', 'Jarash'), ('AJLUN', 'Ajlun'), ('KARAK', 'Karak'), ('TAFILAH', 'Tafilah')]
+
+
     local = models.BooleanField(default="False")
     city = models.CharField(max_length=255, choices=cities_options, blank=True, null=True)
     member = models.CharField(max_length=255, choices=member_type, blank=True, null=True)

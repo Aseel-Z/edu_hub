@@ -45,8 +45,10 @@ class LoginView(generics.RetrieveAPIView):
         interests = request.POST.get('interests')
         biography = request.POST.get('biography')
         hourly_tutoring_rate = request.POST.get('hourly_tutoring_rate')
-        user = authenticate(email=email, password=password, first_name=first_name, city=city, member=member, mobile_number=mobile_number, specialization=specialization, interests=interests, biography=biography, hourly_tutoring_rate=hourly_tutoring_rate)
-        user = authenticate(email=email, password=password)        
+        gender = request.POST.get('gender')
+        organization_summary = request.POST.get('organization_summary')
+        user = authenticate(email=email, password=password, first_name=first_name, city=city, member=member, mobile_number=mobile_number, specialization=specialization, interests=interests, biography=biography, hourly_tutoring_rate=hourly_tutoring_rate, gender=gender, organization_summary=organization_summary)
+        # user = authenticate(email=email, password=password)        
         if user is not None:
             if user.is_active:
                 login(request, user)
