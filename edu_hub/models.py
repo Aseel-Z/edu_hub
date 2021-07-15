@@ -1,7 +1,7 @@
 from django.db import models
 # from django.conf import settings
 from edu_hub_project.settings import AUTH_USER_MODEL
-
+from users.models import *
 
 class Connection(models.Model):
     # connection_member_id = models.ManyToManyField(Member, on_delete=models.CASCADE , null = True, blank = True)
@@ -22,5 +22,5 @@ class Message(models.Model):
 class Post(models.Model):
     # create_date = models.DateTimeField()
     post_body = models.TextField()
-    creator_id = models.ForeignKey(
-        AUTH_USER_MODEL, on_delete=models.CASCADE, null=True, blank=True)
+    creator_id = models.TextField()
+    # creator_id = models.ForeignKey(AUTH_USER_MODEL, on_delete=models.CASCADE, null=True, blank=True)
